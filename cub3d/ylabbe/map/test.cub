@@ -1,0 +1,17 @@
+         SO            bitmaps/north_test.xpm                   
+         NO          ./bitmaps/south_test.xpm        
+
+         WE       ./bitmaps/west_test.xpm          
+        EA          ./bitmaps/wood.xpm          
+       
+             F      255   ,   0   ,   0     
+        C     100    ,     0   , 255
+
+
+        11111101111     
+        10000001101       
+        10000001101
+        100000011S1     
+        11111111111     
+
+

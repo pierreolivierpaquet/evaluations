@@ -1,0 +1,37 @@
+--- CUSTOM ---
+./philo 4 500 250 250
+./philo 4 499 250 250
+./philo 127 500 250 250 (Dies)
+./philo 5 800 200 900 (Test print shifting)
+./philo 4s 400s 10s000 200ss0000 (Bad arguments - Should not pass)
+./philo ss4 ss400 ss100 ss200 (Bad arguments - Should not pass)
+./philo -22 -444 -111 -111 -22
+./philo 2147483647 2147483647 2147483647 2147483647 2147483647 (INT MAX)
+./philo 5 250 2147483648 2147483648 2147483648 (OVERFLOW test)
+./philo 5 250 2147483647 2147483647 2147483647 (Should not lock / hang)
+./philo 5 2147483647 2147483647 2147483647 2147483647 (Should lock due to long time)
+./philo 4 6005 3000 100 (no die)
+./philo 5 6005 3000 100 (dies)
+./philo 4 400 100 200 0 (Nothing really happens)
+./philo 100 400 100 200 100 | grep eating | wc -l (10000)
+./philo 200 200 60 60 100 | grep eating | wc -l (20000)
+
+--- LAZY TESTER ---
+./philo 5 800 200 200 (no one should die)
+./philo 5 600 150 150 (no one should die)
+./philo 4 410 200 200 (no one should die)
+./philo 100 800 200 200 (no one should die)
+./philo 105 800 200 200 (no one should die)
+./philo 200 800 200 200 (no one should die)
+
+./philo 1 800 200 200 (a philo should die)
+./philo 4 310 200 100 (a philo should die)
+./philo 4 200 205 200 (a philo should die)
+./philo 5 800 200 200 7 | grep eating | wc -l (no one should die, simulation should stop after 7 eats)
+./philo 4 410 200 200 10 | grep eating | wc -l  (no one should die, simulation should stop after 10 eats)
+./philo -5 600 200 200 (should error and not run (no crashing))
+./philo 4 -5 200 200 (should error and not run (no crashing))
+./philo 4 600 -5 200 (should error and not run (no crashing))
+./philo 4 600 200 -5 (should error and not run (no crashing))
+./philo 4 600 200 200 -5 (should error and not run (no crashing))
+
